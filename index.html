@@ -7,5 +7,25 @@
     </head>
     <body>
         <h2>Job API with JsonWebToken based Authentication</h2>
+        <h3>For Experience the API , You need to use POSTMAN reqest response system.</h3>
+        <br/>
+        <h4>System design with two routes :<br/>
+            1) Authentication with (Register , Login) feature<br/>
+            2) Job list access control with JWT Authentication. For specific user have custom job list.
+        </h4>
+        <br/>
+        <h4>
+            Resgister/Login Schema : {"name" , "email" , "password"} and Password is encrypted by bcrypt. <br/><br/>
+            Register gateway(POST) GET also possible for Development NOW <a href="api/v1/auth/register">"api/v1/auth/register"</a><br/><br/>
+            Login gateway(POST) <a href="api/v1/auth/login">"api/v1/auth/login"</a><br/><br/>
+            After Login , User get a JWT  bearer token for Authentication for each api request.<br/><br/>
+            Job Schema : {"company", "position" , "status" , "createdBy(userID)"} <br/><br/>
+            Job list gateway (GET , POST) <a href="api/v1/jobs/">"api/v1/jobs/"</a> (JWT token require for Access!!) <br/><br/>
+            Job Update (PATCH , GET) <a href="api/v1/jobs/:id">"api/v1/jobs/:id"</a> for Specific Job any update.<br/><br/>
+        </h4>
+        <h5>API owner : Jafran Bin Zakaria <br/>
+            Github : Jaifan <br/>
+            Email : jafranbinzakaria@gmail.com
+        </h5>
     </body>
 </html>
