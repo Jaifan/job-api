@@ -1,5 +1,6 @@
 require('dotenv').config();
 require('express-async-errors');
+const path = require('path');
 const express = require('express');
 const app = express();
 const dbConnect = require('./db/dbConnect');
@@ -29,7 +30,9 @@ app.use(cors());
 app.use(xssClean());
 
 //Routing
-app.get('/', (req,res)=> {res.send('<h1>JOBS API</h1>')});
+app.get('/', (req,res)=> {
+  res.sendFile(path.join(__dirname, '/index.html'))
+});
 app.use('/api/v1/auth', Auth);
 app.use('/api/v1/jobs', authentication ,Jobs);
 

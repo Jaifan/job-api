@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config()
 
-const MONGODB_URI = process.env.MONGODB_URL_JOB
+const MONGODB_URI = "mongodb+srv://jaifan:zakaria@cluster0.spttd.mongodb.net/JOBS?retryWrites=true&w=majority"
 
 if (!MONGODB_URI) {
   console.log("Set MongoDb .env Variable");
